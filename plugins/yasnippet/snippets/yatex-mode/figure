@@ -1,0 +1,9 @@
+#name : figure
+# --
+\begin{figure}[htbp]
+  \begin{center}
+  \includegraphics[height=40mm]{fig/${1:dummy}.eps}
+  \caption{${2:c}}
+  \label{fig:$1}
+	\end{center}
+\end{figure}

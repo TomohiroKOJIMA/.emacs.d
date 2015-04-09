@@ -1,0 +1,462 @@
+((("get" .
+   [1 0 0])
+  ("getenv" .
+   [1 0 0 0 0 0])
+  ("exec-path" .
+   [0 0 0 0 0 1 0 0 0])
+  ("figdummy" .
+   [0 0 1 0 0 0 0 0])
+  ("本研究もLanguage" .
+   [0 0 0 1 0 0 0 0 0 0 0 0])
+  ("yatex" .
+   [1 0 0 0 1])
+  ("main" .
+   [0 0 0 1])
+  ("add-to-list" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("printHelloAndSomething" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("coding" .
+   [1 0 1 0 0 0])
+  ("temp_str" .
+   [0 0 0 0 0 0 1 1])
+  ("makeFrriendIDList" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("following" .
+   [0 0 0 0 0 1 0 0 0])
+  ("and" .
+   [1 0 0])
+  ("followed_by" .
+   [0 0 0 0 0 1 0 0 0 0 0])
+  ("or" .
+   [2 0])
+  ("continue" .
+   [1 0 0 0 0 0 0 0])
+  ("is_followed" .
+   [0 0 0 1 0 0 0 0 0 0 0])
+  ("friendships" .
+   [1 0 2 0 2 1 0 0 0 1 1])
+  ("time" .
+   [1 0 0 0])
+  ("boolean" .
+   [0 0 0 1 0 0 0])
+  ("function" .
+   [1 0 0 0 0 0 0 0])
+  ("argv" .
+   [12 0 0 0])
+  ("id_j" .
+   [5 0 0 0])
+  ("id_i" .
+   [4 0 0 1])
+  ("False" .
+   [2 0 0 0 0])
+  ("checkFriendship" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("checkFriendships" .
+   [0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("tryApi" .
+   [0 0 0 0 1 0])
+  ("since_id" .
+   [0 0 1 1 0 1 0 0])
+  ("makeFileForCmtyFunction" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("checkFriendsOFFriends" .
+   [0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("makeFriendUserObject" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("twilist" .
+   [1 0 0 0 0 0 5])
+  ("owner_id" .
+   [1 0 1 1 0 0 0 0])
+  ("user_index" .
+   [0 0 0 0 0 1 0 2 0 0])
+  ("user" .
+   [1 0 0 0])
+  ("write" .
+   [1 0 0 0 0])
+  ("clusters_file" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("clusters" .
+   [0 0 0 0 1 0 0 0])
+  ("open" .
+   [1 0 0 0])
+  ("clusters_file_name" .
+   [0 0 0 0 2 1 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("cluster" .
+   [1 0 0 0 1 0 1])
+  ("combination_table_file_name" .
+   [0 0 0 0 0 2 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("combination_table" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("callCmtyFunction" .
+   [0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0])
+  ("call" .
+   [1 0 0 0])
+  ("True" .
+   [1 0 0 0])
+  ("except" .
+   [1 0 0 0 0 0])
+  ("friend_of_friend_user" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("try" .
+   [1 0 0])
+  ("friend_ids" .
+   [0 0 1 1 1 1 0 0 0 0])
+  ("index" .
+   [1 0 0 0 0])
+  ("enumerate" .
+   [2 0 0 0 0 1 0 2 0])
+  ("friends_of_friend_user" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("friend_user" .
+   [0 0 0 0 1 0 0 0 0 0 0])
+  ("owner_user" .
+   [3 0 1 1 0 0 0 0 0 0])
+  ("friends" .
+   [4 0 0 0 0 0 0])
+  ("screen_name" .
+   [0 0 0 0 1 0 1 0 0 0 0])
+  ("id" .
+   [3 0])
+  ("for" .
+   [16 0 1])
+  ("append" .
+   [3 0 0 0 0 0])
+  ("friend_users" .
+   [0 0 0 0 3 0 1 2 0 0 0 0])
+  ("make" .
+   [1 0 0 0])
+  ("def" .
+   [12 0 0])
+  ("table_rows" .
+   [0 0 0 0 1 1 0 0 0 0])
+  ("range" .
+   [3 0 0 0 0])
+  ("friend" .
+   [2 0 0 0 1 10])
+  ("users_combination_table" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1])
+  ("len" .
+   [10 0 0])
+  ("print" .
+   [14 0 0 0 0])
+  ("using_api_num" .
+   [0 0 0 4 0 0 0 0 0 0 0 0 2])
+  ("api_num" .
+   [1 0 0 0 0 0 0])
+  ("start_api" .
+   [0 0 0 0 1 1 0 0 0])
+  ("num_api" .
+   [0 0 0 0 1 1 0])
+  ("api3" .
+   [1 0 0 0])
+  ("api2" .
+   [1 0 0 0])
+  ("apis" .
+   [9 0 1 0])
+  ("tryDownloadFriends" .
+   [0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("owner_screenn_ame" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("Cmty" .
+   [0 0 0 2])
+  ("api1" .
+   [2 0 0 0])
+  ("as" .
+   [2 0])
+  ("Api2" .
+   [1 0 0 0])
+  ("from" .
+   [5 0 0 0])
+  ("import" .
+   [13 0 0 0 0 0])
+  ("goalPosition" .
+   [0 0 0 0 0 0 1 0 0 0 0 0])
+  ("return" .
+   [11 0 0 0 0 1])
+  ("mtxForAllMembers" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("lk" .
+   [1 0])
+  ("scoped_lock" .
+   [0 0 0 0 1 0 0 0 0 0 0])
+  ("mutex" .
+   [1 0 0 0 0])
+  ("boost" .
+   [1 0 0 0 0])
+  ("getGoalPosition" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("Position" .
+   [0 0 0 0 0 0 0 1])
+  ("Detect" .
+   [1 0 0 0 0 0])
+  ("goal" .
+   [1 0 0 0])
+  ("TestSoccerPlayer" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("TestAgent" .
+   [0 0 0 0 0 0 0 1 0])
+  ("DISALLOW_COPY_AND_ASSIGN" .
+   [0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("else" .
+   [7 0 0 0])
+  ("kick2m54f" .
+   [0 0 0 0 0 0 1 0 1])
+  ("cameraImageCenter" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("const" .
+   [2 0 0 0 0])
+  ("cameraImageSize" .
+   [0 0 0 0 0 0 1 0 0 0 0 1 0 0 0])
+  ("strikerParameters" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("parameters" .
+   [0 0 0 0 0 1 1 0 0 0])
+  ("ballPosiiton" .
+   [0 0 0 0 0 0 0 0 0 0 0 2])
+  ("visionRecognizer" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1])
+  ("while" .
+   [1 0 0 1 0])
+  ("setIsActionOn" .
+   [2 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("_isActionOn" .
+   [0 0 0 0 0 1 0 0 0 0 0])
+  ("isActionOn" .
+   [0 0 0 0 1 1 0 1 0 0])
+  ("agent" .
+   [3 0 0 0 1])
+  ("waitXsecondsAndTurnOffCamearaAndAction" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0])
+  ("join" .
+   [1 0 0 0])
+  ("th3" .
+   [2 0 0])
+  ("ratioStoH" .
+   [0 0 0 0 0 1 0 0 0])
+  ("waitingSeconds" .
+   [0 0 0 2 0 0 0 0 0 0 0 0 0 0])
+  ("wait10secondsAndTurnOffCameara" .
+   [0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("void" .
+   [2 0 0 0])
+  ("actMultiEffectorForTest" .
+   [0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("actMultiEffector" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("true" .
+   [1 0 0 1])
+  ("mynao" .
+   [1 0 0 0 0])
+  ("false" .
+   [1 0 1 0 0])
+  ("isAbsolute" .
+   [0 0 1 0 0 0 0 0 0 0])
+  ("bool" .
+   [3 0 0 0])
+  ("space" .
+   [1 0 0 0 0])
+  ("effectorList" .
+   [0 0 0 0 1 0 0 0 0 0 0 0])
+  ("ARRAY" .
+   [1 0 0 0 0])
+  ("undef" .
+   [1 0 0 0 0])
+  ("namespace" .
+   [2 0 0 0 0 0 1 1 1])
+  ("MyNao" .
+   [0 0 0 0 2])
+  ("naoIP" .
+   [0 0 0 1 0])
+  ("axisMask" .
+   [0 0 0 0 0 0 0 1])
+  ("timeList" .
+   [0 0 0 0 0 0 1 0])
+  ("0f" .
+   [7 0])
+  ("using" .
+   [2 0 1 1 0])
+  ("alledsproxy" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("array" .
+   [15 0 0 0 7])
+  ("ALValue" .
+   [5 0 1 0 2 7 0])
+  ("AL" .
+   [1 9])
+  ("strikeVictoryPose" .
+   [0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0])
+  ("Side" .
+   [1 0 0 0])
+  ("goToPosture" .
+   [1 0 0 0 0 0 0 1 0 0 0])
+  ("posture" .
+   [1 0 0 1 0 0 0])
+  ("self" .
+   [4 0 0 44])
+  ("defun" .
+   [0 0 0 1 0])
+  ("Task5" .
+   [0 0 0 1 1])
+  ("vec" .
+   [5 0 1])
+  ("data_VectorXd" .
+   [0 0 0 0 3 1 0 0 0 0 0 0 0])
+  ("transpose" .
+   [0 0 0 1 4 0 0 0 0])
+  ("hight" .
+   [1 0 2 0 0])
+  ("cout" .
+   [2 0 0 7])
+  ("endl" .
+   [7 0 0 0])
+  ("Eigen" .
+   [0 0 1 0 5])
+  ("VectorXd" .
+   [0 0 0 1 0 1 2 0])
+  ("items" .
+   [5 0 0 0 2])
+  ("size" .
+   [8 0 0 0])
+  ("MatrixXd" .
+   [1 0 0 0 0 1 0 0])
+  ("list_i" .
+   [1 0 2 2 2 0])
+  ("int" .
+   [9 0 0])
+  ("vec_size" .
+   [2 0 0 3 0 0 0 0])
+  ("inverse" .
+   [0 0 0 0 0 1 0])
+  ("classIndex" .
+   [1 0 0 0 0 0 0 1 0 0])
+  ("if" .
+   [11 0])
+  ("case" .
+   [2 0 0 0])
+  ("temp_Y_bar" .
+   [2 0 0 4 1 0 0 0 0 0])
+  ("Y_bar" .
+   [0 0 2 0 0])
+  ("double" .
+   [3 0 0 0 0 0])
+  ("temporary" .
+   [0 0 0 0 1 0 0 0 0])
+  ("cv" .
+   [7 0])
+  ("Mat" .
+   [0 0 2])
+  ("h" .
+   [1])
+  ("test" .
+   [3 0 0 0])
+  ("i" .
+   [1])
+  ("test1" .
+   [2 0 0 0 0])
+  ("test2" .
+   [2 0 0 0 0])
+  ("include" .
+   [1 0 0 0 0 0 0])
+  ("IplImage" .
+   [0 0 0 0 0 0 1 0])
+  ("test3" .
+   [1 0 0 0 0])
+  ("COLOR_BGR2HSV" .
+   [1 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("Api" .
+   [3 0 0])
+  ("api" .
+   [7 0 0])
+  ("User" .
+   [3 0 0 2])
+  ("owner" .
+   [1 0 0 1 5])
+  ("単層パーセプトロン" .
+   [0 0 1 0 0 0 0 0 0])
+  ("2入力1出力" .
+   [1 0 0 0 0 0])
+  ("pylab" .
+   [2 0 0 0 0])
+  ("plt" .
+   [5 0 0])
+  ("class" .
+   [5 0 0 1 2])
+  ("weight" .
+   [0 0 0 6 0 13])
+  ("sum" .
+   [1 0 0])
+  ("sumation" .
+   [1 0 0 2 1 0 0 2])
+  ("input_data" .
+   [0 0 1 1 2 0 0 0 0 0])
+  ("output" .
+   [2 0 0 3 5 2])
+  ("random" .
+   [10 0 0 0 0 0])
+  ("weights" .
+   [11 0 0 0 0 0 0])
+  ("__name__" .
+   [0 0 0 0 0 0 0 1])
+  ("__main__" .
+   [0 0 0 0 1 0 0 0])
+  ("learningrate" .
+   [0 0 0 0 0 0 2 2 1 0 0 0])
+  ("uniform" .
+   [3 0 0 2 0 0 0])
+  ("data" .
+   [27 0 0 0])
+  ("error" .
+   [1 0 0 0 0])
+  ("num_learning" .
+   [0 0 0 0 1 0 0 0 0 0 0 0])
+  ("datasets" .
+   [0 0 0 0 0 0 2 0])
+  ("weightedSum" .
+   [0 0 0 0 0 0 0 0 0 1 0])
+  ("calcState" .
+   [0 0 0 1 0 0 0 0 0])
+  ("new_weights" .
+   [0 0 0 1 0 0 0 0 0 0 0])
+  ("is_desired_output" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("in" .
+   [1 0])
+  ("elif" .
+   [1 0 0 0])
+  ("learn" .
+   [1 0 0 1 0])
+  ("error_counter" .
+   [0 0 0 1 0 0 0 1 0 0 0 0 0])
+  ("bias" .
+   [3 0 0 0])
+  ("arrange" .
+   [1 0 0 0 0 0 0])
+  ("num_x" .
+   [0 0 0 1 0])
+  ("num_y" .
+   [0 0 0 1 0])
+  ("datafile" .
+   [0 0 0 0 1 0 0 0])
+  ("datas" .
+   [2 0 0 0 0])
+  ("line" .
+   [1 0 0 0])
+  ("makeColorMap" .
+   [0 0 0 0 1 0 1 0 0 0 0 0])
+  ("data2" .
+   [2 0 0 0 0])
+  ("naoqi" .
+   [1 0 0 0 0])
+  ("ALProxy" .
+   [1 0 0 0 0 1 0])
+  ("myNao" .
+   [1 0 0 0 0])
+  ("speech" .
+   [1 0 0 0 0 0])
+  ("robotIP" .
+   [0 0 0 0 0 1 1])
+  ("terminate" .
+   [0 0 0 0 0 1 0 0 0])
+  ("figure" .
+   [0 0 1 0 0 0])))

@@ -1,0 +1,68 @@
+***************
+*** 511,520 ****
+    (when (and ess-current-process-name
+  	     (get-process ess-current-process-name)
+  	     (not (ess-process-get 'busy)))
+-     (let* ((funname (or (and ess-eldoc-show-on-symbol ;; aggressive completion
+- 			     (ess-get-object-at-point))
+- 			(car (ess--funname.start))))
+- 	   (doc (cadr (ess-function-arguments funname))))
+        ;; (comint-preinput-scroll-to-bottom)
+        (when doc
+  	(ess-eldoc-docstring-format funname doc))
+--- 511,525 ----
+    (when (and ess-current-process-name
+  	     (get-process ess-current-process-name)
+  	     (not (ess-process-get 'busy)))
++     (let* ((funname (car (ess--funname.start)))
++ 	   (obj (and ess-eldoc-show-on-symbol ;; aggressive completion
++ 			(ess-get-object-at-point)))
++ 	   (doc))
++       (if obj
++ 	  (setq doc (cadr (ess-function-arguments obj))))
++       (if doc
++ 	  (setq funname obj)
++ 	(setq doc (cadr (ess-function-arguments funname))))
+        ;; (comint-preinput-scroll-to-bottom)
+        (when doc
+  	(ess-eldoc-docstring-format funname doc))
+***************
+*** 658,674 ****
+  (defun ess-get-object-at-point ()
+    "A very permissive version of symbol-at-point.
+  Suitable for R object's names."
+-   (let ((delim "[-+ ,\"\t\n\\*/()%{}]"))
+      (unless (and (looking-back delim)
+  		 (looking-at   delim))
+        (save-excursion
+- 	(let ((beg (re-search-backward delim nil t)))
+  	  (setq beg (or (and beg (goto-char (1+ beg)))
+  			(goto-char (point-min))))
+- 	  (unless (re-search-forward delim nil t)
+- 	    (goto-char (point-max)))
+- 	  (buffer-substring-no-properties beg (1- (point))))
+- 	))))
+  
+  
+  (defvar ess--funname.start nil)
+--- 663,682 ----
+  (defun ess-get-object-at-point ()
+    "A very permissive version of symbol-at-point.
+  Suitable for R object's names."
++   (let ((delim "[-+ ,\"\t\n\\*/()%{}!]"))
+      (unless (and (looking-back delim)
+  		 (looking-at   delim))
+        (save-excursion
++ 	(let ((beg (re-search-backward delim nil t))
++ 	      (end)
++ 	      (funname))
+  	  (setq beg (or (and beg (goto-char (1+ beg)))
+  			(goto-char (point-min))))
++ 	  (setq end (or (and (re-search-forward delim nil t) (1- (point)))
++ 			(point-max)))
++ 	  (setq funname (buffer-substring-no-properties beg end))
++ 	  (and (and (not (string-match delim funname)) (not (string= "" funname)))
++ 	       funname))))))
+  
+  
+  (defvar ess--funname.start nil)
