@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; PATH‚Ìİ’è
+;; PATHã®è¨­å®š
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/auto-install/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
@@ -7,22 +7,22 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; OS‚²‚Æ‚É•ªŠò‚·‚éİ’è
+;; OSã”ã¨ã«åˆ†å²ã™ã‚‹è¨­å®š
 (cond
   ;;****************************************** Windows
  ((string-match "mingw" system-configuration)
-  ;; ‰pŒê
+  ;; è‹±èª
   (set-face-attribute 'default nil
 		      :family "Consolas"
 		      :height 90)
-  ;; “ú–{Œê
+  ;; æ—¥æœ¬èª
   (set-fontset-font
    nil 'japanese-jisx0208
    (font-spec :family "MeiryoKe_Console"))
-  ;; “™•‚É‚·‚é
+  ;; ç­‰å¹…ã«ã™ã‚‹
   (setq face-font-rescale-alist '(("MeiryoKe_Console" . 1.08)))
 
-  ;; ƒR[ƒfƒBƒ“ƒO
+  ;; ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°
   (set-language-environment 'Japanese)
   (prefer-coding-system 'shift_jis)
   (set-default-coding-systems 'shift_jis)
@@ -36,19 +36,19 @@
 
  ;;****************************************** OSX
  ((string-match "apple-darwin" system-configuration)
-  ;; ‰pŒê
+  ;; è‹±èª
   (set-face-attribute 'default nil
 		      :family "Menlo" ;; font
 		      :height 120)    ;; font size
-  ;; “ú–{Œê
+  ;; æ—¥æœ¬èª
   (set-fontset-font
    nil 'japanese-jisx0208
    (font-spec :family "Hiragino Kaku Gothic ProN"))
-  ;; “™•‚É‚·‚é
+  ;; ç­‰å¹…ã«ã™ã‚‹
   (setq face-font-rescale-alist
 	'((".*Hiragino_Mincho_pro.*" . 1.2)))
 
-  ;; ƒR[ƒfƒBƒ“ƒO
+  ;; ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°
   (set-language-environment 'Japanese)
   (prefer-coding-system 'utf-8)
   (set-default-coding-systems 'utf-8)
@@ -58,10 +58,10 @@
   (setq default-buffer-file-coding-system 'utf-8)
   (set-buffer-file-coding-system 'utf-8)
 
-  ;; ‰~ƒ}[ƒN‚ğƒoƒbƒNƒXƒ‰ƒbƒVƒ…‚É‚·‚é
-  ;;(define-key global-map [?\] [?\\])
+  ;; å††ãƒãƒ¼ã‚¯ã‚’ãƒãƒƒã‚¯ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã«ã™ã‚‹
+  (define-key global-map [?Â¥] [?\\])
 
-  ;; emacs‚Æshell‚ÌPATH‚ğ‹¤—L‚·‚é
+  ;; emacsã¨shellã®PATHã‚’å…±æœ‰ã™ã‚‹
   (defun set-exec-path-from-shell-PATH ()
     ;; "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
     ;; This is particularly useful under Mac OSX, where GUI apps are not started from a shell."
@@ -77,16 +77,16 @@
 
  ;;****************************************** Linux
  ((string-match "linux" system-configuration)
-  ;; ‰pŒê
+  ;; è‹±èª
   (set-face-attribute 'default nil
 		      :family "TakaoGothic" ;; font
 		      :height 120)    ;; font size
-  ;; “ú–{Œê
+  ;; æ—¥æœ¬èª
   (set-fontset-font
    nil 'japanese-jisx0208
-   (font-spec :family "TakaoƒSƒVƒbƒN"))
+   (font-spec :family "Takaoã‚´ã‚·ãƒƒã‚¯"))
 
-  ;; ƒR[ƒfƒBƒ“ƒO
+  ;; ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°
   (set-language-environment 'Japanese)
   (prefer-coding-system 'utf-8)
   (set-default-coding-systems 'utf-8)
@@ -96,7 +96,7 @@
   (setq default-buffer-file-coding-system 'utf-8)
   (set-buffer-file-coding-system 'utf-8)
 
-  ;; emacs‚Æshell‚ÌPATH‚ğ‹¤—L‚·‚é
+  ;; emacsã¨shellã®PATHã‚’å…±æœ‰ã™ã‚‹
   (defun set-exec-path-from-shell-PATH ()
     ;; "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
     ;; This is particularly useful under Mac OSX, where GUI apps are not started from a shell."
@@ -113,37 +113,37 @@
  );
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; Œ©‚½–ÚŠÖ˜A
+ ;; è¦‹ãŸç›®é–¢é€£
 
- (setq linum-format "%5d ") ; 5 Œ…•ª‚Ì—Ìˆæ‚ğŠm•Û‚µ‚Äs”Ô†‚Ì‚ ‚Æ‚ÉƒXƒy[ƒX‚ğ“ü‚ê‚é
+ (setq linum-format "%5d ") ; 5 æ¡åˆ†ã®é ˜åŸŸã‚’ç¢ºä¿ã—ã¦è¡Œç•ªå·ã®ã‚ã¨ã«ã‚¹ãƒšãƒ¼ã‚¹ã‚’å…¥ã‚Œã‚‹
 
- ;; ƒXƒ^[ƒgƒAƒbƒvƒy[ƒW‚ğ•\¦‚µ‚È‚¢
+ ;; ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—ãƒšãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ãªã„
  (setq inhibit-startup-message t)
  (server-start)
 
- ;;ƒ^ƒCƒgƒ‹ƒo[‚Éƒtƒ@ƒCƒ‹–¼‚ğ•\¦
+ ;;ã‚¿ã‚¤ãƒˆãƒ«ãƒãƒ¼ã«ãƒ•ã‚¡ã‚¤ãƒ«åã‚’è¡¨ç¤º
  (setq frame-title-format (format "%%f - Emacs@%s" (system-name)))
 
- ;; ƒc[ƒ‹ƒo[‚ğÁ‚·
+ ;; ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’æ¶ˆã™
  (tool-bar-mode 0)
 
- ;;“¯–¼ƒtƒ@ƒCƒ‹‚Ìƒoƒbƒtƒ@–¼‚Ì¯•Ê•¶š—ñ‚ğ•ÏX‚·‚é
+ ;;åŒåãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒãƒƒãƒ•ã‚¡åã®è­˜åˆ¥æ–‡å­—åˆ—ã‚’å¤‰æ›´ã™ã‚‹
  (require 'uniquify)
  (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
- ;;c•ªŠ„‚ÅÜ‚è•Ô‚·
+ ;;ç¸¦åˆ†å‰²ã§æŠ˜ã‚Šè¿”ã™
  (setq truncate-partial-width-windows nil)
- ;;Ü‚è•Ô‚µ‹L†‚ÌF
+ ;;æŠ˜ã‚Šè¿”ã—è¨˜å·ã®è‰²
  (set-face-foreground 'fringe "gray50")
- ;;Ü‚è•Ô‚µ‹L†‚Ì‚Æ‚±‚Ì”wŒiF
+ ;;æŠ˜ã‚Šè¿”ã—è¨˜å·ã®ã¨ã“ã®èƒŒæ™¯è‰²
  (set-face-background 'fringe "gray12")
 
- ;; region ‚ÌF
+ ;; region ã®è‰²
  (set-face-foreground 'default "white")
  (set-face-background 'default "gray8")
  (setq frame-background-mode 'dark)
 
- ;;ƒJ[ƒ\ƒ‹s‚ÌƒnƒCƒ‰ƒCƒg
+ ;;ã‚«ãƒ¼ã‚½ãƒ«è¡Œã®ãƒã‚¤ãƒ©ã‚¤ãƒˆ
  (defface hlline-face
    '((((class color)
        (background dark))
@@ -159,10 +159,10 @@
  (setq hl-line-face 'hlline-face)
  ;;(setq hl-line-face 'underline)
  (global-hl-line-mode)
-;;; ƒJ[ƒ\ƒ‹‚Ì“_–Å‚ğ~‚ß‚é
+;;; ã‚«ãƒ¼ã‚½ãƒ«ã®ç‚¹æ»…ã‚’æ­¢ã‚ã‚‹
  (blink-cursor-mode 0)
 
- ;;“§‰ß‚Ìİ’è
+ ;;é€éã®è¨­å®š
  (when window-system
    (progn
      (setq default-frame-alist
@@ -173,29 +173,29 @@
 	     '(alpha  . 90))
 	    default-frame-alist))))
 
- ;; ‰æ–ÊƒTƒCƒY‚Ìİ’è
+ ;; ç”»é¢ã‚µã‚¤ã‚ºã®è¨­å®š
  (if (boundp 'window-system)
      (setq initial-frame-alist
 	   (append (list
-		    '(vertical-scroll-bars . nil) ;;ƒXƒNƒ[ƒ‹ƒo[‚Í‚¢‚ç‚È‚¢
-		    '(width . 202) ;; ƒEƒBƒ“ƒhƒE•
-		    '(height . 60) ;; ƒEƒBƒ“ƒhƒE‚Ì‚‚³
-		    '(top . 0) ;;•\¦ˆÊ’u
-		    '(left . 0) ;;•\¦ˆÊ’u
+		    '(vertical-scroll-bars . nil) ;;ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã¯ã„ã‚‰ãªã„
+		    '(width . 202) ;; ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å¹…
+		    '(height . 60) ;; ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®é«˜ã•
+		    '(top . 0) ;;è¡¨ç¤ºä½ç½®
+		    '(left . 0) ;;è¡¨ç¤ºä½ç½®
 		    )
 		   initial-frame-alist)))
 
- ;; ƒŠ[ƒWƒ‡ƒ“w’èCŠ‡ŒÊ‘Î‰‚ÉF‚ğ‚Â‚¯‚é
+ ;; ãƒªãƒ¼ã‚¸ãƒ§ãƒ³æŒ‡å®šï¼Œæ‹¬å¼§å¯¾å¿œã«è‰²ã‚’ã¤ã‘ã‚‹
  (setq transient-mark-mode t)
  (show-paren-mode)
  (setq show-paren-style 'parenthesis)
  (setq show-paren-delay 0.05) ;; default: 0.125
 
- ;;sCŒ…”Ô†,ƒoƒbƒtƒ@ƒTƒCƒY‚Ì•\¦
+ ;;è¡Œï¼Œæ¡ç•ªå·,ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚ºã®è¡¨ç¤º
  (line-number-mode t)
  (column-number-mode t)
 
- ;; s––‚ÌƒXƒy[ƒX‚ğ•\¦
+ ;; è¡Œæœ«ã®ã‚¹ãƒšãƒ¼ã‚¹ã‚’è¡¨ç¤º
  (setq-default show-trailing-whitespace t)
 
  (defun trim-whitespaces ()
@@ -221,19 +221,19 @@
    (deactivate-mark))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; ƒVƒ‡[ƒgƒJƒbƒgƒL[
+ ;; ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆã‚­ãƒ¼
 
- ;; C-h ‚Å‘O•ûÁ‹
+ ;; C-h ã§å‰æ–¹æ¶ˆå»
  (keyboard-translate ?\C-h ?\C-?)
 
- ;; C-k ‚Ås––‚Ì‰üs‚àÁ‹
+ ;; C-k ã§è¡Œæœ«ã®æ”¹è¡Œã‚‚æ¶ˆå»
  (setq kill-whole-line t)
 
- ;;C-Tab‚Å•Ê‚ÌƒEƒBƒ“ƒhƒE‚ÉˆÚ“®
+ ;;C-Tabã§åˆ¥ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«ç§»å‹•
  (define-key global-map[C-tab] 'other-window)
  (define-key global-map [S-C-tab] (lambda () (interactive) (other-window -1)))
 
- ;; ƒJ[ƒ\ƒ‹ˆÊ’u‚©‚çs“ª‚Ü‚Åíœ‚·‚é "C-o"
+ ;; ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‹ã‚‰è¡Œé ­ã¾ã§å‰Šé™¤ã™ã‚‹ "C-o"
  (defun backward-kill-line (arg)
    "Kill chars backward until encountering the end of a line."
    (interactive "p")
@@ -243,8 +243,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; auto-install
- ;; M-x auto-install-‚È‚ñ‚Æ‚© ‚ÅˆË‘¶ŠÖŒW‚ğl—¶‚µ‚ÄFX“ü‚ê‚Ä‚­‚ê‚éB
- ;; ‹N“®‚Éd‚­‚È‚é‚Ì‚ÅAg‚í‚È‚¢‚É‚ÍOFF‚Å‚à
+ ;; M-x auto-install-ãªã‚“ã¨ã‹ ã§ä¾å­˜é–¢ä¿‚ã‚’è€ƒæ…®ã—ã¦è‰²ã€…å…¥ã‚Œã¦ãã‚Œã‚‹ã€‚
+ ;; èµ·å‹•æ™‚ã«é‡ããªã‚‹ã®ã§ã€ä½¿ã‚ãªã„æ™‚ã«ã¯OFFã§ã‚‚
  ;;(require 'auto-install)
  ;;(auto-install-update-emacswiki-package-name t)
  ;;(auto-install-compatibility-setup)
@@ -252,7 +252,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; anything http://d.hatena.ne.jp/tomoya/20090423/1240456834
- ;; "C-;"‚Å‹N“® ƒtƒ@ƒCƒŠƒXƒg‚ğƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İæ‚è-ì¬‚Í $ sudo contribute*.ruby > all.filelist
+ ;; "C-;"ã§èµ·å‹• ãƒ•ã‚¡ã‚¤ãƒªã‚¹ãƒˆã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿å–ã‚Š-ä½œæˆã¯ $ sudo contribute*.ruby > all.filelist
  (require 'anything-config)
  (define-key global-map (kbd "C-;") 'anything-filelist+)
 
@@ -273,9 +273,9 @@
  ;; yasnippet
 
  (require 'cl)
- ;; –â‚¢‡‚í‚¹‚ğŠÈ—ª‰» yes/no ‚ğ y/n
+ ;; å•ã„åˆã‚ã›ã‚’ç°¡ç•¥åŒ– yes/no ã‚’ y/n
  (fset 'yes-or-no-p 'y-or-n-p)
-					; yasnippet‚ğ’u‚¢‚Ä‚¢‚éƒtƒHƒ‹ƒ_‚ÉƒpƒX‚ğ’Ê‚·
+					; yasnippetã‚’ç½®ã„ã¦ã„ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ã«ãƒ‘ã‚¹ã‚’é€šã™
  (add-to-list 'load-path
 	      (expand-file-name "~/.emacs.d/plugins/yasnippet"))
  (require 'yasnippet)
@@ -293,7 +293,7 @@
  (defvar ac-dir (expand-file-name "~/.emacs.d/plugins/auto-complete"))
  (add-to-list 'load-path ac-dir)
 
-;;; ƒx[ƒX‚Æ‚È‚éƒ\[ƒX‚ğw’è
+;;; ãƒ™ãƒ¼ã‚¹ã¨ãªã‚‹ã‚½ãƒ¼ã‚¹ã‚’æŒ‡å®š
  (defvar my-ac-sources
    '(ac-source-yasnippet
      ac-source-abbrev
@@ -302,39 +302,39 @@
  (setq-default ac-sources my-ac-sources)
 
  (global-auto-complete-mode t)
-;;; C-n / C-p ‚Å‘I‘ğ
+;;; C-n / C-p ã§é¸æŠ
  (setq ac-use-menu-map t)
 
-;;; yasnippet‚Ìbinding‚ğw’è‚·‚é‚ÆƒGƒ‰[‚ªo‚é‚Ì‚Å‰ñ”ğ‚·‚é•û–@B
+;;; yasnippetã®bindingã‚’æŒ‡å®šã™ã‚‹ã¨ã‚¨ãƒ©ãƒ¼ãŒå‡ºã‚‹ã®ã§å›é¿ã™ã‚‹æ–¹æ³•ã€‚
  (setf (symbol-function 'yas-active-keys)
        (lambda ()
 	 (remove-duplicates (mapcan #'yas--table-all-keys (yas--get-snippet-tables)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; ŒÂ•Ê‚ÌŒ¾Œêİ’è
+ ;; å€‹åˆ¥ã®è¨€èªè¨­å®š
 
- ;; cc-mode‚Ì©‘OƒXƒ^ƒCƒ‹İ’è
+ ;; cc-modeã®è‡ªå‰ã‚¹ã‚¿ã‚¤ãƒ«è¨­å®š
  (add-hook 'c-mode-common-hook
 	   (lambda()
 	     (setq completion-mode t)
 	     (setq compilation-window-height 10)
 	     (setq c-basic-offset 2)
-	     ;; cc-mode“à‚Å’è‹`‚³‚ê‚éƒL[ƒoƒCƒ“ƒh
+	     ;; cc-modeå†…ã§å®šç¾©ã•ã‚Œã‚‹ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰
 	     (define-key c-mode-base-map "\C-cc"      'compile)
 	     (define-key c-mode-base-map "\C-cg"      'gdb)
-	     (define-key c-mode-base-map "\C-ck" 'kill-compilation);‚â‚ß‚é
-	     (define-key c-mode-base-map "\C-ce" 'next-error)	;ƒGƒ‰[ŒŸõ
+	     (define-key c-mode-base-map "\C-ck" 'kill-compilation);ã‚„ã‚ã‚‹
+	     (define-key c-mode-base-map "\C-ce" 'next-error)	;ã‚¨ãƒ©ãƒ¼æ¤œç´¢
 	     (define-key c-mode-base-map "\"" 'electric-pair)
 	     (define-key c-mode-base-map "\'" 'electric-pair)
 	     (define-key c-mode-base-map "(" 'electric-pair)
 	     (define-key c-mode-base-map "[" 'electric-pair)
 	     (define-key c-mode-base-map "{" 'electric-pair)
-	     ;; Š‡ŒÊ‚â;‚ğ“ü—Í‚·‚é‚Æ©“®‚Å‰üs
+	     ;; æ‹¬å¼§ã‚„;ã‚’å…¥åŠ›ã™ã‚‹ã¨è‡ªå‹•ã§æ”¹è¡Œ
 					;(setq c-auto-newline t)
-	     ;; TAB ‚ÍƒXƒy[ƒX 2 ŒÂ‚Ô‚ñ‚Å
+	     ;; TAB ã¯ã‚¹ãƒšãƒ¼ã‚¹ 2 å€‹ã¶ã‚“ã§
 	     (setq-default tab-width 2)
 	     (setq indent-tabs-mode nil)
-	     ;; # ‚ğƒCƒ“ƒfƒ“ƒg‚µ‚È‚¢
+	     ;; # ã‚’ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã—ãªã„
 	     ;;(setq c-electric-pound-behavior '(alignleft))
 	     (c-set-offset 'cpp-macro 0)
 	     (c-set-offset 'cpp-macro-cont '+)
@@ -346,22 +346,22 @@
 	     (setq completion-mode t)
 	     (setq compilation-window-height 10)
 	     (setq c-basic-offset 2)
-	     ;; cc-mode“à‚Å’è‹`‚³‚ê‚éƒL[ƒoƒCƒ“ƒh
+	     ;; cc-modeå†…ã§å®šç¾©ã•ã‚Œã‚‹ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰
 	     (define-key c++-mode-base-map "\C-cc"      'compile)
 	     (define-key c++-mode-base-map "\C-cg"      'gdb)
-	     (define-key c++-mode-base-map "\C-ck" 'kill-compilation);‚â‚ß‚é
-	     (define-key c++-mode-base-map "\C-ce" 'next-error)	;ƒGƒ‰[ŒŸõ
+	     (define-key c++-mode-base-map "\C-ck" 'kill-compilation);ã‚„ã‚ã‚‹
+	     (define-key c++-mode-base-map "\C-ce" 'next-error)	;ã‚¨ãƒ©ãƒ¼æ¤œç´¢
 	     (define-key c++-mode-base-map "\"" 'electric-pair)
 	     (define-key c++-mode-base-map "\'" 'electric-pair)
 	     (define-key c++-mode-base-map "(" 'electric-pair)
 	     (define-key c++-mode-base-map "[" 'electric-pair)
 	     (define-key c++-mode-base-map "{" 'electric-pair)
-	     ;; Š‡ŒÊ‚â;‚ğ“ü—Í‚·‚é‚Æ©“®‚Å‰üs
+	     ;; æ‹¬å¼§ã‚„;ã‚’å…¥åŠ›ã™ã‚‹ã¨è‡ªå‹•ã§æ”¹è¡Œ
 					;(setq c-auto-newline t)
-	     ;; TAB ‚ÍƒXƒy[ƒX 2 ŒÂ‚Ô‚ñ‚Å
+	     ;; TAB ã¯ã‚¹ãƒšãƒ¼ã‚¹ 2 å€‹ã¶ã‚“ã§
 	     (setq-default tab-width 2)
 	     (setq indent-tabs-mode nil)
-	     ;; # ‚ğƒCƒ“ƒfƒ“ƒg‚µ‚È‚¢
+	     ;; # ã‚’ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã—ãªã„
 	     (setq c-electric-pound-behavior '(alignleft))
 	     (c-set-offset 'cpp-macro 0)
 	     (c-set-offset 'cpp-macro-cont '+)
@@ -373,69 +373,69 @@
  (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
  (setq skeleton-pair 1)
 
- ;; yatex-mode ‚Ì‹N“®
+ ;; yatex-mode ã®èµ·å‹•
  (setq auto-mode-alist
        (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
  (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
- ;; yatex‚ğ’u‚¢‚Ä‚¢‚éƒtƒHƒ‹ƒ_‚ÉƒpƒX‚ğ’Ê‚·
+ ;; yatexã‚’ç½®ã„ã¦ã„ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ã«ãƒ‘ã‚¹ã‚’é€šã™
  (add-to-list 'load-path
 	      (expand-file-name "~/.emacs.d/plugins/yatex1.77"))
 
- ;; •¶Íì¬‚ÌŠ¿šƒR[ƒh‚Ìİ’è
+ ;; æ–‡ç« ä½œæˆæ™‚ã®æ¼¢å­—ã‚³ãƒ¼ãƒ‰ã®è¨­å®š
  ;; 1 = Shift_JIS, 2 = ISO-2022-JP, 3 = EUC-JP, 4 = UTF-8
- ;; ƒR[ƒh‚ğw’è‚µ‚Ä‚µ‚Ü‚¤‚ÆC•Ê‚ÌƒR[ƒh‚Ìƒtƒ@ƒCƒ‹‚àŸè‚É
- ;; ‚±‚±‚Åw’è‚µ‚½ƒR[ƒh‚É•ÏŠ·‚³‚ê‚Ä‚µ‚Ü‚¢ƒgƒ‰ƒuƒ‹‚Ì‚à‚Æ‚É
- ;; ‚È‚é‚Ì‚ÅCnil‚É‚µ‚Ä‚¨‚­‚Ì‚ª‹gB
+ ;; ã‚³ãƒ¼ãƒ‰ã‚’æŒ‡å®šã—ã¦ã—ã¾ã†ã¨ï¼Œåˆ¥ã®ã‚³ãƒ¼ãƒ‰ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚‚å‹æ‰‹ã«
+ ;; ã“ã“ã§æŒ‡å®šã—ãŸã‚³ãƒ¼ãƒ‰ã«å¤‰æ›ã•ã‚Œã¦ã—ã¾ã„ãƒˆãƒ©ãƒ–ãƒ«ã®ã‚‚ã¨ã«
+ ;; ãªã‚‹ã®ã§ï¼Œnilã«ã—ã¦ãŠãã®ãŒå‰ã€‚
  (setq YaTeX-kanji-code nil)
 
- ;;LaTeXƒRƒ}ƒ“ƒh‚Ìİ’è
+ ;;LaTeXã‚³ãƒãƒ³ãƒ‰ã®è¨­å®š
  (setq tex-command "platex")
 
- ;; OS‚²‚Æ‚É•ªŠò‚·‚éİ’è
+ ;; OSã”ã¨ã«åˆ†å²ã™ã‚‹è¨­å®š
  (cond
   ;;****************************************** OSX
   ((string-match "apple-darwin" system-configuration)
-   ;;YaTeX‚Å‚ÌƒvƒŒƒrƒ…[ƒAƒRƒ}ƒ“ƒh‚ğİ’è‚·‚é
+   ;;YaTeXã§ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¢ã‚³ãƒãƒ³ãƒ‰ã‚’è¨­å®šã™ã‚‹
    (setq dvi2-command "open -a Preview")
    )
 
   ;;****************************************** Linux
   ((string-match "linux" system-configuration)
-   ;;YaTeX‚Å‚ÌƒvƒŒƒrƒ…[ƒAƒRƒ}ƒ“ƒh‚ğİ’è‚·‚é
+   ;;YaTeXã§ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¢ã‚³ãƒãƒ³ãƒ‰ã‚’è¨­å®šã™ã‚‹
    (setq dvi2-command "evince")
    )
 
   ;;****************************************** Windows
   ((string-match "mingw" system-configuration)
-   ;;YaTeX‚Å‚ÌƒvƒŒƒrƒ…[ƒAƒRƒ}ƒ“ƒh‚ğİ’è‚·‚é
+   ;;YaTeXã§ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¢ã‚³ãƒãƒ³ãƒ‰ã‚’è¨­å®šã™ã‚‹
    (setq dvi2-command "dviout")
    )
   );
 
- ;;AMS-LaTeX ‚ğg—p‚·‚©‚Ç‚¤‚©
+ ;;AMS-LaTeX ã‚’ä½¿ç”¨ã™ã‹ã©ã†ã‹
  (setq YaTeX-use-AMS-LaTeX t)
 
- ;; RefTeX‚ğYaTeX‚Åg‚¦‚é‚æ‚¤‚É‚·‚é
+ ;; RefTeXã‚’YaTeXã§ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
  (add-hook 'yatex-mode-hook '(lambda () (reftex-mode t)))
- ;; RefTeX‚Åg‚¤bibƒtƒ@ƒCƒ‹‚ÌˆÊ’u‚ğw’è‚·‚é
+ ;; RefTeXã§ä½¿ã†bibãƒ•ã‚¡ã‚¤ãƒ«ã®ä½ç½®ã‚’æŒ‡å®šã™ã‚‹
  ;;(setq reftex-default-bibliography '("~/Library/TeX/bib/papers.bib"))
 
- ;;RefTeX‚ÉŠÖ‚·‚éİ’è
+ ;;RefTeXã«é–¢ã™ã‚‹è¨­å®š
  (setq reftex-enable-partial-scans t)
  (setq reftex-save-parse-info t)
  (setq reftex-use-multiple-selection-buffers t)
 
- ;;RefTeX‚É‚¨‚¢‚Ä”®‚Ìˆø—p‚ğ\eqref‚É‚·‚é
+ ;;RefTeXã«ãŠã„ã¦æ•°å¼ã®å¼•ç”¨ã‚’\eqrefã«ã™ã‚‹
  (setq reftex-label-alist '((nil ?e nil "~\\eqref{%s}" nil nil)))
 
- ;; [prefix] ‰pš ƒRƒ}ƒ“ƒh‚ğ[prefix] C-‰pš ‚É•ÏX‚·‚é
+ ;; [prefix] è‹±å­— ã‚³ãƒãƒ³ãƒ‰ã‚’[prefix] C-è‹±å­— ã«å¤‰æ›´ã™ã‚‹
  (setq YaTeX-inihibit-prefix-letter t)
 
- ;; ©“®‰üs‚ğ—}§‚·‚é
+ ;; è‡ªå‹•æ”¹è¡Œã‚’æŠ‘åˆ¶ã™ã‚‹
  (add-hook 'yatex-mode-hook'(lambda ()(setq auto-fill-function nill)))
 
- ;;YaTeX‚Ì“ú–{Œê‚Ìauto-complete‚ªŸT“©‚µ‚¢‚Æ‚«‚ÍˆÈ‰º‚ğƒRƒƒ“ƒgƒAƒEƒg‚·‚é
-;;;; Auto Complete LaTeX ‚Ìİ’è
+ ;;YaTeXã®æ—¥æœ¬èªã®auto-completeãŒé¬±é™¶ã—ã„ã¨ãã¯ä»¥ä¸‹ã‚’ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆã™ã‚‹
+;;;; Auto Complete LaTeX ã®è¨­å®š
  (require 'auto-complete-latex)
  (setq ac-l-dict-directory "~/.emacs.d/plugins/yasnippet/snippets/yatex-mode")
  (add-to-list 'ac-modes 'latex-mode)
@@ -447,19 +447,19 @@
    (add-hook 'yatex-mode-hook 'ac-l-setup))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; gtags ƒWƒƒƒ“ƒv  http://qiita.com/yewton@github/items/d9e686d2f2a092321e34
+ ;; gtags ã‚¸ãƒ£ãƒ³ãƒ—  http://qiita.com/yewton@github/items/d9e686d2f2a092321e34
 
  (setq gtags-prefix-key "\C-c")
  (require 'gtags)
  (require 'anything-gtags)
- ;; ƒL[ƒoƒCƒ“ƒh
+ ;; ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰
  (setq gtags-mode-hook
        '(lambda ()
 	  (define-key gtags-mode-map "\C-cs" 'gtags-find-symbol)
 	  (define-key gtags-mode-map "\C-r" 'gtags-find-rtag)
 	  (define-key gtags-mode-map "\C-t" 'gtags-find-tag)
 	  (define-key gtags-mode-map "\C-cf" 'gtags-parse-file)))
- ;; gtags-mode ‚ğg‚¢‚½‚¢ mode ‚Ì hook ‚É’Ç‰Á‚·‚é
+ ;; gtags-mode ã‚’ä½¿ã„ãŸã„ mode ã® hook ã«è¿½åŠ ã™ã‚‹
  (add-hook 'c-mode-common-hook
 	   '(lambda()
 	      (gtags-mode 1)))
@@ -482,64 +482,64 @@
  (add-hook 'after-save-hook 'update-gtags)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; RAESS‚Ìİ’è
+ ;; Rã€ESSã®è¨­å®š
 
- ;; ƒpƒX‚Ì’Ç‰Á
+ ;; ãƒ‘ã‚¹ã®è¿½åŠ 
  (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/ess")
- ;; Šg’£q‚ª r, R ‚Ìê‡‚É R-mode ‚ğ‹N“®
+ ;; æ‹¡å¼µå­ãŒ r, R ã®å ´åˆã« R-mode ã‚’èµ·å‹•
  (add-to-list 'auto-mode-alist '("\\.[rR]$" . R-mode))
- ;; R-mode ‚ğ‹N“®‚·‚é‚É ess-site ‚ğƒ[ƒh
+ ;; R-mode ã‚’èµ·å‹•ã™ã‚‹æ™‚ã« ess-site ã‚’ãƒ­ãƒ¼ãƒ‰
  (autoload 'R-mode "ess-site" "Emacs Speaks Statistics mode" t)
- ;; R ‚ğ‹N“®‚·‚é‚É ess-site ‚ğƒ[ƒh
+ ;; R ã‚’èµ·å‹•ã™ã‚‹æ™‚ã« ess-site ã‚’ãƒ­ãƒ¼ãƒ‰
  (autoload 'R "ess-site" "start R" t)
- ;; R-mode, iESS ‚ğ‹N“®‚·‚éÛ‚ÉŒÄ‚Ño‚·‰Šú‰»ŠÖ”
+ ;; R-mode, iESS ã‚’èµ·å‹•ã™ã‚‹éš›ã«å‘¼ã³å‡ºã™åˆæœŸåŒ–é–¢æ•°
  (setq ess-loaded-p nil)
  (defun ess-load-hook (&optional from-iess-p)
-   ;; ƒCƒ“ƒfƒ“ƒg‚Ì•‚ğ4‚É‚·‚éiƒfƒtƒHƒ‹ƒg2j
+   ;; ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®å¹…ã‚’4ã«ã™ã‚‹ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ2ï¼‰
    (setq ess-indent-level 4)
-   ;; ƒCƒ“ƒfƒ“ƒg‚ğ’²®
+   ;; ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’èª¿æ•´
    (setq ess-arg-function-offset-new-line (list ess-indent-level))
-   ;; comment-region ‚ÌƒRƒƒ“ƒgƒAƒEƒg‚É # ‚ğg‚¤iƒfƒtƒHƒ‹ƒg##j
+   ;; comment-region ã®ã‚³ãƒ¡ãƒ³ãƒˆã‚¢ã‚¦ãƒˆã« # ã‚’ä½¿ã†ï¼ˆãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ##ï¼‰
    (make-variable-buffer-local 'comment-add)
    (setq comment-add 0)
 
-   ;; Å‰‚É ESS ‚ğŒÄ‚Ño‚µ‚½‚Ìˆ—
+   ;; æœ€åˆã« ESS ã‚’å‘¼ã³å‡ºã—ãŸæ™‚ã®å‡¦ç†
    (when (not ess-loaded-p)
-     ;; ƒAƒ“ƒ_[ƒXƒRƒA‚Ì“ü—Í‚ª " <- " ‚É‚È‚ç‚È‚¢‚æ‚¤‚É‚·‚é
+     ;; ã‚¢ãƒ³ãƒ€ãƒ¼ã‚¹ã‚³ã‚¢ã®å…¥åŠ›ãŒ " <- " ã«ãªã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹
      (ess-toggle-underscore nil)
-     ;; C-c r ‚ğ‰Ÿ‚µ‚½Û‚É•\¦‚³‚ê‚éŒó•â”‚ÌãŒÀ’l
-     ;; •\¦”‚ª‘½‚¢‚Æˆ—‚ªd‚­‚È‚é
+     ;; C-c r ã‚’æŠ¼ã—ãŸéš›ã«è¡¨ç¤ºã•ã‚Œã‚‹å€™è£œæ•°ã®ä¸Šé™å€¤
+     ;; è¡¨ç¤ºæ•°ãŒå¤šã„ã¨å‡¦ç†ãŒé‡ããªã‚‹
      (setq anything-R-help-limit 40)
      (setq anything-R-local-limit 20)
-     ;; C-c r ‚Å R ‚ÌŠÖ”‚âƒIƒuƒWƒFƒNƒg‚ğŒŸõ‚Å‚«‚é‚æ‚¤‚É‚·‚é
+     ;; C-c r ã§ R ã®é–¢æ•°ã‚„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¤œç´¢ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
      (when (require 'anything-R nil t)
-       ;; ess-smart-comma ‚ª“±“ü‚³‚ê‚½‚Ì‚Å repospkg ‚Æ localpkg ‚Í‚ ‚Ü‚è•K—v‚È‚³‚»‚¤
+       ;; ess-smart-comma ãŒå°å…¥ã•ã‚ŒãŸã®ã§ repospkg ã¨ localpkg ã¯ã‚ã¾ã‚Šå¿…è¦ãªã•ãã†
        (setq anything-for-R-list '(anything-c-source-R-help
 				   anything-c-source-R-local))
        (define-key ess-mode-map (kbd "C-c r") 'anything-for-R)
        (define-key inferior-ess-mode-map (kbd "C-c r") 'anything-for-R))
-     ;; C-c C-g ‚Å ƒIƒuƒWƒFƒNƒg‚Ì“à—e‚ğŠm”F‚Å‚«‚é‚æ‚¤‚É‚·‚é
+     ;; C-c C-g ã§ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å†…å®¹ã‚’ç¢ºèªã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
      (require 'ess-R-object-popup nil t)
-     ;; •âŠ®‹@”\‚ğ—LŒø‚É‚·‚é
+     ;; è£œå®Œæ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹
      (setq ess-use-auto-complete t)
-     ;; anything ‚ğg‚¢‚½‚¢‚Ì‚Å IDO ‚Í×–‚
+     ;; anything ã‚’ä½¿ã„ãŸã„ã®ã§ IDO ã¯é‚ªé­”
      (setq ess-use-ido nil)
-     ;; ƒLƒƒƒŒƒbƒg‚ªƒVƒ“ƒ{ƒ‹ã‚É‚ ‚éê‡‚É‚àƒGƒR[ƒGƒŠƒA‚Éƒwƒ‹ƒv‚ğ•\¦‚·‚é
+     ;; ã‚­ãƒ£ãƒ¬ãƒƒãƒˆãŒã‚·ãƒ³ãƒœãƒ«ä¸Šã«ã‚ã‚‹å ´åˆã«ã‚‚ã‚¨ã‚³ãƒ¼ã‚¨ãƒªã‚¢ã«ãƒ˜ãƒ«ãƒ—ã‚’è¡¨ç¤ºã™ã‚‹
      (setq ess-eldoc-show-on-symbol t)
-     ;; ‹N“®‚Éƒ[ƒLƒ“ƒOƒfƒBƒŒƒNƒgƒŠ‚ğq‚Ë‚ç‚ê‚È‚¢‚æ‚¤‚É‚·‚é
+     ;; èµ·å‹•æ™‚ã«ãƒ¯ãƒ¼ã‚­ãƒ³ã‚°ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’å°‹ã­ã‚‰ã‚Œãªã„ã‚ˆã†ã«ã™ã‚‹
      (setq ess-ask-for-ess-directory nil)
-     ;; # ‚Ì”‚É‚æ‚Á‚ÄƒRƒƒ“ƒg‚ÌƒCƒ“ƒfƒ“ƒg‚Ì‹““®‚ª•Ï‚í‚é‚Ì‚ğ–³Œø‚É‚·‚é
+     ;; # ã®æ•°ã«ã‚ˆã£ã¦ã‚³ãƒ¡ãƒ³ãƒˆã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã®æŒ™å‹•ãŒå¤‰ã‚ã‚‹ã®ã‚’ç„¡åŠ¹ã«ã™ã‚‹
      (setq ess-fancy-comments nil)
      (setq ess-loaded-p t)
      (unless from-iess-p
-       ;; ƒEƒBƒ“ƒhƒE‚ª1‚Â‚Ìó‘Ô‚Å *.R ‚ğŠJ‚¢‚½ê‡‚ÍƒEƒBƒ“ƒhƒE‚ğc‚É•ªŠ„‚µ‚Ä R ‚ğ•\¦‚·‚é
+       ;; ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒ1ã¤ã®çŠ¶æ…‹ã§ *.R ã‚’é–‹ã„ãŸå ´åˆã¯ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’ç¸¦ã«åˆ†å‰²ã—ã¦ R ã‚’è¡¨ç¤ºã™ã‚‹
        (when (one-window-p)
 	 (split-window-horizontally)
 	 (let ((buf (current-buffer)))
 	   (ess-switch-to-ESS nil)
 	   (switch-to-buffer-other-window buf)))
-       ;; R ‚ğ‹N“®‚·‚é‘O‚¾‚Æ auto-complete-mode ‚ª off ‚É‚È‚é‚Ì‚Å©‘O‚Å on ‚É‚·‚é
-       ;; cf. ess.el ‚Ì ess-load-extras
+       ;; R ã‚’èµ·å‹•ã™ã‚‹å‰ã ã¨ auto-complete-mode ãŒ off ã«ãªã‚‹ã®ã§è‡ªå‰ã§ on ã«ã™ã‚‹
+       ;; cf. ess.el ã® ess-load-extras
        (when (and ess-use-auto-complete (require 'auto-complete nil t))
 	 (add-to-list 'ac-modes 'ess-mode)
 	 (mapcar (lambda (el) (add-to-list 'ac-trigger-commands el))
@@ -547,47 +547,47 @@
 	 (setq ac-sources '(ac-source-R ac-source-filename)))))
 
    (if from-iess-p
-       ;; R ‚ÌƒvƒƒZƒX‚ª‘¼‚É‚È‚¯‚ê‚ÎƒEƒBƒ“ƒhƒE‚ğ•ªŠ„‚·‚é
+       ;; R ã®ãƒ—ãƒ­ã‚»ã‚¹ãŒä»–ã«ãªã‘ã‚Œã°ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’åˆ†å‰²ã™ã‚‹
        (if (> (length ess-process-name-list) 0)
 	   (when (one-window-p)
 	     (split-window-horizontally)
 	     (other-window 1)))
-     ;; *.R ‚Æ R ‚ÌƒvƒƒZƒX‚ğŒ‹‚Ñ‚Â‚¯‚é
-     ;; ‚±‚ê‚ğ‚µ‚Ä‚¨‚©‚È‚¢‚Æ•âŠ®‚È‚Ç‚Ì•Ö—˜‚È‹@”\‚ªg‚¦‚È‚¢
+     ;; *.R ã¨ R ã®ãƒ—ãƒ­ã‚»ã‚¹ã‚’çµã³ã¤ã‘ã‚‹
+     ;; ã“ã‚Œã‚’ã—ã¦ãŠã‹ãªã„ã¨è£œå®Œãªã©ã®ä¾¿åˆ©ãªæ©Ÿèƒ½ãŒä½¿ãˆãªã„
      (ess-force-buffer-current "Process to load into: ")))
 
- ;; R-mode ‹N“®’¼Œã‚Ìˆ—
+ ;; R-mode èµ·å‹•ç›´å¾Œã®å‡¦ç†
  (add-hook 'R-mode-hook 'ess-load-hook)
 
- ;; R ‹N“®’¼‘O‚Ìˆ—
+ ;; R èµ·å‹•ç›´å‰ã®å‡¦ç†
  (add-hook 'ess-pre-run-hook (lambda () (ess-load-hook t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- ;; ‚»‚Ì‘¼‚Ìİ’è
+ ;; ãã®ä»–ã®è¨­å®š
 
- ;; ƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹‚ğì‚ç‚È‚¢
+ ;; ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‰ãªã„
  (setq backup-inhibited t)
  (setq make-backup-files nil)
- ;; I—¹‚ÉƒI[ƒgƒZ[ƒuƒtƒ@ƒCƒ‹‚ğÁ‚·
+ ;; çµ‚äº†æ™‚ã«ã‚ªãƒ¼ãƒˆã‚»ãƒ¼ãƒ–ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¶ˆã™
  (setq delete-auto-save-files t)
 
- ;;‰¹‚ğ–Â‚ç‚³‚È‚¢
+ ;;éŸ³ã‚’é³´ã‚‰ã•ãªã„
  (setq visible-bell t)
  (setq ring-bell-function 'ignore)
 
- ;;ƒoƒbƒtƒ@©“®Ä“Ç‚İ‚İ
+ ;;ãƒãƒƒãƒ•ã‚¡è‡ªå‹•å†èª­ã¿è¾¼ã¿
  (global-auto-revert-mode 1)
 
- ;;ƒXƒNƒŠƒvƒg•Û‘¶‚É©“®“I‚Échmod+x‚ğs‚¤(æ“ª‚É#!)
+ ;;ã‚¹ã‚¯ãƒªãƒ—ãƒˆä¿å­˜æ™‚ã«è‡ªå‹•çš„ã«chmod+xã‚’è¡Œã†(å…ˆé ­ã«#!)
  (add-hook 'after-save-hook
 	   'executable-make-buffer-file-executable-if-script-p)
- ;;•Û‘¶‚És––‚Ì‹ó”’‚ğíœ
+ ;;ä¿å­˜æ™‚ã«è¡Œæœ«ã®ç©ºç™½ã‚’å‰Šé™¤
  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-					;ƒRƒ“ƒpƒCƒ‹‚Ésave‚·‚é‚©•·‚©‚È‚¢
+					;ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ™‚ã«saveã™ã‚‹ã‹èã‹ãªã„
  (setq compilation-ask-about-save nil)
 
- ;; ƒ}ƒEƒX‚ÌƒzƒC[ƒ‹ƒXƒNƒ[ƒ‹ƒXƒs[ƒh‚ğ’²ß
+ ;; ãƒã‚¦ã‚¹ã®ãƒ›ã‚¤ãƒ¼ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚¹ãƒ”ãƒ¼ãƒ‰ã‚’èª¿ç¯€
  (global-set-key [wheel-up] '(lambda () "" (interactive) (scroll-down 1)))
  (global-set-key [wheel-down] '(lambda () "" (interactive) (scroll-up 1)))
  (global-set-key [double-wheel-up] '(lambda () "" (interactive) (scroll-down 1)))
@@ -595,15 +595,15 @@
  (global-set-key [triple-wheel-up] '(lambda () "" (interactive) (scroll-down 2)))
  (global-set-key [triple-wheel-down] '(lambda () "" (interactive) (scroll-up 2)))
 
- ;;‘Î‰‚·‚éŠ‡ŒÊ‚ğ‘}“ü
+ ;;å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’æŒ¿å…¥
  (defun electric-pair ()
    "Insert character pair without sournding spaces"
    (interactive)
    (let (parens-require-spaces)
      (insert-pair)))
 
- ;; undohist‚Ìİ’è
- ;; Undo‚Ì—š—ğ‚ğemacs‚ğ•Â‚¶‚½‚É‚à•Û‚·‚éB
- ;; ‚Ü‚ê‚ÉƒoƒO‚é
+ ;; undohistã®è¨­å®š
+ ;; Undoã®å±¥æ­´ã‚’emacsã‚’é–‰ã˜ãŸæ™‚ã«ã‚‚ä¿æŒã™ã‚‹ã€‚
+ ;; ã¾ã‚Œã«ãƒã‚°ã‚‹
  ;;(require 'undohist)
  ;;(undohist-initialize)
