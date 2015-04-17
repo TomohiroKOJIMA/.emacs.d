@@ -1,6 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; PATHの設定
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/auto-install/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/"))
@@ -56,7 +55,7 @@
   (set-keyboard-coding-system 'utf-8)
   (set-clipboard-coding-system 'utf-8)
   (setq default-buffer-file-coding-system 'utf-8)
-  (set-buffer-file-coding-system 'utf-8)
+  (set-buffer-file-coding-syste                                                                                                                       m 'utf-8)
 
   ;; 円マークをバックスラッシュにする
   (define-key global-map [?¥] [?\\])
@@ -79,12 +78,12 @@
  ((string-match "linux" system-configuration)
   ;; 英語
   (set-face-attribute 'default nil
-		      :family "TakaoGothic" ;; font
+		      :family "monospace" ;; font
 		      :height 120)    ;; font size
   ;; 日本語
   (set-fontset-font
    nil 'japanese-jisx0208
-   (font-spec :family "Takaoゴシック"))
+   (font-spec :family "monospacex"))
 
   ;; コーディング
   (set-language-environment 'Japanese)
