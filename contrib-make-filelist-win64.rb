@@ -34,7 +34,8 @@ $EXCLUDE_REGEXP = Regexp.union(
 # Set default directories to collect
 $LS_DIRS = [
   "~/Documents",
-  "~/Downloads"
+  "~/Downloads",
+  "~/.emacs.d"
 ]
 #$LS_DIRS = ["."]
 # ==== End of Customize Variables =====
