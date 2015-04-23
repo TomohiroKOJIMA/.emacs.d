@@ -198,6 +198,9 @@
 ;; 行末のスペースを表示
 (setq-default show-trailing-whitespace t)
 
+;; デフォルトのディレクトリをホームに設定
+(setq default-directory "~/")
+
 (defun trim-whitespaces ()
   "Trim excess whitespaces."
   (interactive "*")
