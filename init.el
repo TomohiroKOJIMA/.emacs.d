@@ -3,7 +3,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/auto-install/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/"))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; OSごとに分岐する設定
@@ -33,7 +32,7 @@
 
   )
 
- ;;****************************************** OSX
+ ;;****************************************** Osx
  ((string-match "apple-darwin" system-configuration)
   ;; 英語
   (set-face-attribute 'default nil
@@ -255,10 +254,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package elpa
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)
+(require 'package) ;; You might already have this line
+(add-to-list 'package-archives'("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa2" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; anything http://d.hatena.ne.jp/tomoya/20090423/1240456834
@@ -393,10 +397,16 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+;; visual-baseic-modeの起動
+(autoload 'visual-basic-mode "visual-basic-mode" "Visual Basic mode." t)
+(setq auto-mode-alist (append '(("\\.\$latex frm\\|bas\\|cls\$$" .
+				 visual-basic-mode)) auto-mode-alist))
+
 ;; yatex-mode の起動
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+
 ;; yatexを置いているフォルダにパスを通す
 (add-to-list 'load-path
 	     (expand-file-name "~/.emacs.d/plugins/yatex1.77"))

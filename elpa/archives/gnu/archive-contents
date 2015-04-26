@@ -269,7 +269,7 @@
 	  ((:url . "https://github.com/leoliu/ggtags")
 	   (:keywords "tools" "convenience"))])
  (gnorb .
-	[(1 0 1)
+	[(1 1 0)
 	 ((cl-lib
 	   (0 5)))
 	 "Glue code between Gnus, Org, and BBDB" tar
@@ -527,7 +527,7 @@
 	     ((:url . "http://elpa.gnu.org/packages/svg-clock.html")
 	      (:keywords "demo" "svg" "clock"))])
  (swiper .
-	 [(0 2 1)
+	 [(0 3 0)
 	  ((emacs
 	    (24 1)))
 	  "Isearch with an overview. Oh, man!" tar
