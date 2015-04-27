@@ -35,7 +35,9 @@ $EXCLUDE_REGEXP = Regexp.union(
 if RUBY_PLATFORM.downcase =~ /mswin(?!ce)|mingw|cygwin|bccwin/
   # Windows
   $LS_DIRS = [
-    "~/D*",
+    "~/Downloads",
+    "~/Documents",
+    "~/Dropbox",
     "~/.emacs.d"
   ]
 else
