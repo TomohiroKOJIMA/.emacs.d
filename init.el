@@ -113,8 +113,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 見た目関連
 
+;; 行番号の表示
 (global-linum-mode t)
 (setq linum-format "%5d ") ; 5 桁分の領域を確保して行番号のあとにスペースを入れる
+
+;; 文字数自動表示
+(defun count-lines-and-chars ()
+  (if mark-active
+      (format "%d lines,%d chars "
+              (count-lines (region-beginning) (region-end))
+              (- (region-end) (region-beginning)))
+    ;;(count-lines-region (region-beginning) (region-end)) ;; これだとエコーエリアがチラつく
+    ""))
 
 ;; スタートアップページを表示しない
 (setq inhibit-startup-message t)
