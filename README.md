@@ -1,9 +1,9 @@
-#ƒtƒHƒ‹ƒ_\¬
-- all.filelist             : anything—p‚Ìƒf[ƒ^ƒx[ƒX
-- contrib-make-filelist.rb : all.filelist‚ğÅVó‘Ô‚ÉXV‚·‚éRubyƒXƒNƒŠƒvƒg
-- contrib-make-filelist.bat: Windows‚Ìƒ^ƒXƒNƒXƒPƒWƒ…[ƒ‰‚©‚çã‹L‚ğÀs‚·‚é‚½‚ß‚Ìƒoƒbƒ`ƒtƒ@ƒCƒ‹
+#ãƒ•ã‚©ãƒ«ãƒ€æ§‹æˆ
+- all.filelist             : anythingç”¨ã®ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹
+- contrib-make-filelist.rb : all.filelistã‚’æœ€æ–°çŠ¶æ…‹ã«æ›´æ–°ã™ã‚‹Rubyã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+- contrib-make-filelist.bat: Windowsã®ã‚¿ã‚¹ã‚¯ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ©ã‹ã‚‰ä¸Šè¨˜ã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã®ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«
 
 
-#contrib-make-filelist.rb‚ÌƒXƒPƒWƒ…[ƒ‰‚Ö‚Ì“o˜^
-ˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ğÀs‚·‚é
-`schtasks /create /tn "EmacsUpdate" /tr c:\windows\backup.cmd /sc daily /st 00:00:00`
+#contrib-make-filelist.rbã®ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ©ã¸ã®ç™»éŒ²
+ä»¥ä¸‹ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹
+    schtasks /create /tn "EmacsUpdate" /tr c:\windows\backup.cmd /sc daily /st 00:00:00
