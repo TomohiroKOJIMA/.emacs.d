@@ -1,25 +1,25 @@
-##ƒtƒHƒ‹ƒ_\¬
-- auto-install             : auto-install‚ğg‚Á‚Ä“±“ü‚µ‚½ƒpƒbƒP[ƒW
-- auto-save-list           : autosave‚ÌƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹
-- elpa                     : elpa‚ğg‚Á‚Ä“±“ü‚µ‚½ƒpƒbƒP[ƒW
-- plugins                  : yatex“™‚Ìƒvƒ‰ƒOƒCƒ“ŠÖ˜A
+##ãƒ•ã‚©ãƒ«ãƒ€æ§‹æˆ
+- auto-install             : auto-installã‚’ä½¿ã£ã¦å°å…¥ã—ãŸãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
+- auto-save-list           : autosaveã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«
+- elpa                     : elpaã‚’ä½¿ã£ã¦å°å…¥ã—ãŸãƒ‘ãƒƒã‚±ãƒ¼ã‚¸
+- plugins                  : yatexç­‰ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³é–¢é€£
 - server                   :
-- snippets                 : ŠeŒ¾Œêmode‚ÌsnippetŠÖ˜A
+- snippets                 : å„è¨€èªmodeã®snippeté–¢é€£
 - ac-comphist.dat          :
-- all.filelist             : anything—p‚Ìƒf[ƒ^ƒx[ƒX
-- contrib-make-filelist.rb : all.filelist‚ğÅVó‘Ô‚ÉXV‚·‚éRubyƒXƒNƒŠƒvƒg
-- contrib-make-filelist.bat: Windows‚Ìƒ^ƒXƒNƒXƒPƒWƒ…[ƒ‰‚©‚çã‹L‚ğÀs‚·‚é‚½‚ß‚Ìƒoƒbƒ`ƒtƒ@ƒCƒ‹
-- init.el                  : Emacs‚Ìİ’èƒtƒ@ƒCƒ‹
+- all.filelist             : anythingç”¨ã®ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹
+- contrib-make-filelist.rb : all.filelistã‚’æœ€æ–°çŠ¶æ…‹ã«æ›´æ–°ã™ã‚‹Rubyã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+- contrib-make-filelist.bat: Windowsã®ã‚¿ã‚¹ã‚¯ã‚¹ã‚±ã‚¸ãƒ¥ãƒ¼ãƒ©ã‹ã‚‰ä¸Šè¨˜ã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã®ãƒãƒƒãƒãƒ•ã‚¡ã‚¤ãƒ«
+- init.el                  : Emacsã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«
 
-##AnythingŠÖ˜A
-###Windows‚Å‚Ìƒtƒ@ƒCƒ‹ƒŠƒXƒg©“®XVİ’è
-1. ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ÅˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ğÀs‚·‚é‚Æ–ˆ“ú0‚ÉXV‚·‚éD
+##Anythingé–¢é€£
+###Windowsã§ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆè‡ªå‹•æ›´æ–°è¨­å®š
+1. ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ä»¥ä¸‹ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã¨æ¯æ—¥0æ™‚ã«æ›´æ–°ã™ã‚‹ï¼
 
     schtasks /create /tn "EmacsUpdate" /tr c:\windows\backup.cmd /sc daily /st 00:00:00
 
-2. ˆÈ‰º‚ÌƒRƒ}ƒ“ƒh‚ğÀs‚µCİ’èƒ^ƒXƒN‚Ì’†‚É"EmacsUpdate"‚ª’Ç‰Á‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ğŠm”F‚·‚éD
+2. ä»¥ä¸‹ã®ã‚³ãƒãƒ³ãƒ‰ã‚’å®Ÿè¡Œã—ï¼Œè¨­å®šã‚¿ã‚¹ã‚¯ã®ä¸­ã«"EmacsUpdate"ãŒè¿½åŠ ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã™ã‚‹ï¼
 
     schtasks /query
 
-###OSX/Linux‚Å‚Ìƒtƒ@ƒCƒ‹ƒŠƒXƒg©“®XVİ’è
-.bash_profile‚É‘‚«‚Şi‚¾‚Á‚½‚Í‚¸jD
+###OSX/Linuxã§ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒªã‚¹ãƒˆè‡ªå‹•æ›´æ–°è¨­å®š
+.bash_profileã«æ›¸ãè¾¼ã‚€ï¼ˆã ã£ãŸã¯ãšï¼‰ï¼
