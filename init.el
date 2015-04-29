@@ -354,7 +354,7 @@
 	    (define-key c-mode-base-map "[" 'electric-pair)
 	    (define-key c-mode-base-map "{" 'electric-pair)
 	    ;; 括弧や;を入力すると自動で改行
-					;(setq c-auto-newline t)
+	    (setq c-auto-newline t)
 	    ;; TAB はスペース 2 個ぶんで
 	    (setq-default tab-width 2)
 	    (setq indent-tabs-mode nil)
@@ -608,6 +608,7 @@
 ;; バックアップファイルを作らない
 (setq backup-inhibited t)
 (setq make-backup-files nil)
+
 ;; 終了時にオートセーブファイルを消す
 (setq delete-auto-save-files t)
 
@@ -621,10 +622,24 @@
 ;;スクリプト保存時に自動的にchmod+xを行う(先頭に#!)
 (add-hook 'after-save-hook
 	  'executable-make-buffer-file-executable-if-script-p)
-;;保存時に行末の空白を削除
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-					;コンパイル時にsaveするか聞かない
+;;保存時に行末の空白を削除
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;;保存時に行末の空白を削除
+;;（Markdownファイルの場合を除く）
+(setq delete-trailing-whitespace-exclude-patterns (list "\\.md$" "\\.markdown$"))
+
+(require 'cl)
+(defun delete-trailing-whitespace-with-exclude-pattern ()
+  (interactive)
+  (cond ((equal nil (loop for pattern in delete-trailing-whitespace-exclude-patterns
+                          thereis (string-match pattern buffer-file-name)))
+         (delete-trailing-whitespace))))
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace-with-exclude-pattern)
+
+;;コンパイル時にsaveするか聞かない
 (setq compilation-ask-about-save nil)
 
 ;; マウスのホイールスクロールスピードを調節
