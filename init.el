@@ -12,13 +12,13 @@
   ;; 英語
   (set-face-attribute 'default nil
 		      :family "Consolas"
-		      :height 90)
+		      :height 80)
   ;; 日本語
   (set-fontset-font
    nil 'japanese-jisx0208
    (font-spec :family "MeiryoKe_Console"))
   ;; 等幅にする
-  (setq face-font-rescale-alist '(("MeiryoKe_Console" . 1.2)))
+  (setq face-font-rescale-alist '(("MeiryoKe_Console" . 1.08)))
 
   ;; コーディング
   (set-language-environment 'Japanese)
