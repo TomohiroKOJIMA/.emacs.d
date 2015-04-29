@@ -18,7 +18,7 @@
    nil 'japanese-jisx0208
    (font-spec :family "MeiryoKe_Console"))
   ;; 等幅にする
-  (setq face-font-rescale-alist '(("MeiryoKe_Console" . 1.08)))
+  (setq face-font-rescale-alist '(("MeiryoKe_Console" . 1.2)))
 
   ;; コーディング
   (set-language-environment 'Japanese)
